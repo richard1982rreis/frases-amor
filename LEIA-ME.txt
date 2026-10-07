@@ -1,0 +1,44 @@
+AMOR SEM FRONTEIRAS - PACOTE DO APP (PWA)
+==========================================
+
+Conteúdo da pasta
+  index.html            o app
+  manifest.webmanifest  nome, cores e ícones para instalar na tela inicial
+  sw.js                 service worker: faz o app abrir sem internet
+  icons/                ícones feitos a partir do logo oficial
+
+ATENÇÃO ANTES DE PUBLICAR
+Seu site atual (amorsfronteiras.netlify.app) é a página de vendas do e-book.
+Não suba esta pasta por cima dele, senão o index.html dele seria substituído.
+Escolha uma das duas opções:
+
+  Opção A (mais simples): criar um site novo no Netlify
+    1. Entre em app.netlify.com/drop
+    2. Arraste esta pasta inteira (a pasta, não o zip)
+    3. O Netlify dá um endereço novo. Depois você pode trocar o nome ou ligar o seu domínio
+       em Site configuration > Domain management.
+
+  Opção B: dentro do site atual, em uma subpasta
+    1. Na pasta do seu site, crie uma pasta chamada app
+    2. Copie para ela o conteúdo deste pacote (index.html, manifest.webmanifest, sw.js, icons)
+    3. Publique o site como você já faz. O app fica em amorsfronteiras.netlify.app/app/
+    O index.html da raiz do seu site não é alterado.
+
+COMO INSTALAR NO CELULAR (depois de publicado, com https)
+  Android (Chrome): abra o endereço, toque nos três pontinhos e escolha Instalar aplicativo
+                    (ou Adicionar à tela inicial).
+  iPhone (Safari):  abra o endereço, toque em Compartilhar e escolha Adicionar à Tela de Início.
+
+COMO ATUALIZAR DEPOIS
+  Sempre que mudar o index.html, abra o sw.js e troque o número em VERSION (por exemplo asf-v1
+  para asf-v2) antes de publicar. Sem isso, o celular pode continuar mostrando a versão antiga.
+  O app abre na hora com a versão guardada e baixa a nova em segundo plano, então a mudança
+  aparece na abertura seguinte.
+
+SEM INTERNET
+  O app funciona offline depois da primeira visita. As fontes são baixadas na primeira vez
+  com internet e ficam guardadas. Se alguém abrir pela primeira vez sem internet, o app aparece
+  com fontes do sistema.
+
+O QUE NÃO FUNCIONA OFFLINE
+  O botão WhatsApp e os links da aba Sobre precisam de internet.
